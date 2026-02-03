@@ -38,7 +38,5 @@ async function main() {
 
     inputElem.value="";
 }
-
-
 buttonElem.addEventListener("click", main);
 

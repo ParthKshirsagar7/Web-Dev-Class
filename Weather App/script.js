@@ -1,5 +1,5 @@
 const API_KEY = "424180983794487eb4865302260302"
-const BASE_URL = "http://api.weatherapi.com/v1/current.json"
+const BASE_URL = "https://api.weatherapi.com/v1/current.json"
 
 // =========== Taking input ==========
 

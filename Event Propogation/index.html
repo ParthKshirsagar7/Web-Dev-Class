@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Event Propogation</title>
+</head>
+<body>
+    <div>
+        <h1>Event Flow Playground</h1>
+        <p>Demonstrating Capturing, Bubbling & Propogation Control</p>
+    </div>
+    <div class="main">
+        <div class="grandparent">
+            <h3>Grandparent</h3>
+            <div class="parent">
+                <h3>Parent</h3>
+                <button class="child">Click Me</button>
+            </div>
+        </div>
+        <div class="events">
+            <div class="events-header">
+                <h3>Event Log</h3>
+                <button class="clear-logs">Clear logs</button>
+            </div>
+            <ul class="event-logs">
+                
+            </ul>
+            <p>
+                Capturing -> Target -> Bubbling<br>
+                stopPropogation blocks parents<br>
+                stopImmediatePropogation blocks sibling handlers
+            </p>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

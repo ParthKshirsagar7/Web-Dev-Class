@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Counter App</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootEle = document.querySelector("#root");
+
+      function Counter({ count, handler }) {
+        return (
+          <div className="container">
+            <h1>Counter App</h1>
+            <span className="counter">{count}</span>
+            <div className="buttons">
+              <button className="decrement" onClick={handler("d")}>
+                -
+              </button>
+              <button className="reset" onClick={handler("r")}>
+                Reset
+              </button>
+              <button className="increment" onClick={handler("i")}>
+                +
+              </button>
+            </div>
+          </div>
+        );
+      }
+
+      function CounterApp() {
+        const [count, setCount] = React.useState(0);
+
+        const handler = (operation) => {
+          return () => {
+            switch (operation) {
+              case "i":
+                setCount(count + 1);
+                break;
+              case "r":
+                setCount(0);
+                break;
+              case "d":
+                setCount(count - 1);
+                break;
+            }
+          };
+        };
+
+        return <Counter count={count} handler={handler} />;
+      }
+
+      ReactDOM.render(<CounterApp />, rootEle);
+    </script>
+  </body>
+</html>
